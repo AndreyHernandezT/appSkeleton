@@ -14,35 +14,26 @@ class charactersWidget extends StatelessWidget {
           final character = characters[index];
           return ListTile(
             tileColor: Colors.blueGrey[900],
-            title: Row(
-              children: [
-                SizedBox(
-                  width: 100,
-                  child: Image.network(character.image),
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Text(
-                      character.name,
-                      style: Theme.of(context).textTheme.headline2,
-                    ),
-                    Text(
-                      "Estado: " + character.status,
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    Text(
-                      "Especie: " + character.species,
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    Text(
-                      "Genero: " + character.gender,
-                      style: TextStyle(color: Colors.white),
-                    )
-                  ],
-                )
-              ],
+            title: Text(
+              character.name,
+              style: Theme.of(context).textTheme.headline3,
             ),
+            subtitle:
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Text(
+                "Estado: " + character.status,
+                style: Theme.of(context).textTheme.headline4,
+              ),
+              Text(
+                "Especie: " + character.species,
+                style: Theme.of(context).textTheme.headline4,
+              ),
+              Text(
+                "Genero: " + character.gender,
+                style: Theme.of(context).textTheme.headline4,
+              )
+            ]),
+            leading: Image.network(character.image),
           );
         });
   }
