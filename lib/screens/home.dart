@@ -33,13 +33,14 @@ class PaginaHome extends StatelessWidget {
                   SizedBox(
                       width: 250,
                       child: Text(
-                        'Proyecto Móvil que se conecta con OMDB API',
+                        'Proyecto Móvil que se conecta con The Rick and Morty API',
                         style: Theme.of(context).textTheme.headline3,
                       )),
                 ],
               )
             ],
           ),
+          Image.asset("images/background.jpg"),
           Container(
             width: 350,
             decoration: BoxDecoration(
@@ -54,31 +55,20 @@ class PaginaHome extends StatelessWidget {
                 ]),
             child: Center(
               child: Text(
-                'En el Botón inferior derecho "API" se muestra la ventana que conecta con el API de OMDB y busca las películas de Batman, para el ejemplo sólo se mostrarán las primeras 20',
+                'Pulsa el botón "API" en la esquina inferior derecha para ver los personajes principales de la serie Rick and Morty a través de Rick and Morty API',
                 style: Theme.of(context).textTheme.headline2,
                 textAlign: TextAlign.center,
               ),
             ),
           ),
-          Container(
-            width: 350,
-            decoration: BoxDecoration(
-                color: Colors.blueGrey[900],
-                borderRadius: BorderRadius.circular(10.0),
-                boxShadow: <BoxShadow>[
-                  BoxShadow(
-                    color: Colors.black,
-                    offset: Offset(4.0, 4.0),
-                    blurRadius: 15.0,
-                  )
-                ]),
-            child: Center(
-              child: Text(
-                'Este proyecto es un pequeño ejemplo de la funcionalidad de Flutter desarrollado por Andrey Hernández, estudiante de Ingeniería de Sistemas e Informática',
-                style: Theme.of(context).textTheme.headline3,
-                textAlign: TextAlign.center,
-              ),
+          Text(
+            'Este proyecto es un pequeño ejemplo de la funcionalidad de Flutter desarrollado por Andrey Hernández, estudiante de Ingeniería de Sistemas e Informática',
+            style: TextStyle(
+              fontSize: 15.0,
+              fontWeight: FontWeight.normal,
+              color: Colors.blueGrey[200],
             ),
+            textAlign: TextAlign.center,
           ),
         ],
       ),
