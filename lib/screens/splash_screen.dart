@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'home.dart';
-import 'movieApi.dart';
+import 'ramApi.dart';
 
 class SplashScreen extends StatefulWidget {
   @override

@@ -20,17 +20,17 @@ class MyApp extends StatelessWidget {
           highlightColor: Color(0XFF8FFAFF),
           textTheme: TextTheme(
               headline1: TextStyle(
-                fontSize: 35.0,
+                fontSize: 30.0,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
               ),
               headline2: TextStyle(
-                fontSize: 23.0,
+                fontSize: 20.0,
                 fontWeight: FontWeight.normal,
                 color: Colors.blueGrey[200],
               ),
               headline3: TextStyle(
-                fontSize: 20.0,
+                fontSize: 18.0,
                 fontWeight: FontWeight.normal,
                 color: Colors.blueGrey[200],
               ))),

@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:app_skeleton/models/Movies.dart';
-import 'package:app_skeleton/widgets/moviesWidget.dart';
+import 'package:app_skeleton/models/characters.dart';
+import 'package:app_skeleton/widgets/charactersWidget.dart';
 import 'package:flutter/material.dart';
 
 // ignore: import_of_legacy_library_into_null_safe
@@ -13,28 +13,28 @@ class PaginaAPI extends StatefulWidget {
 }
 
 class _PaginaAPIState extends State<PaginaAPI> {
-  List<Movie> _movies = [];
+  List<Character> _character = [];
 
   @override
   void initState() {
     super.initState();
-    _populateAllMovies();
+    _populateAllcharacters();
   }
 
-  void _populateAllMovies() async {
-    final movies = await _allMovies();
+  void _populateAllcharacters() async {
+    final characters = await _allcharacters();
     setState(() {
-      _movies = movies;
+      _character = characters;
     });
   }
 
-  Future<List<Movie>> _allMovies() async {
+  Future<List<Character>> _allcharacters() async {
     final response =
-        await http.get("https://www.omdbapi.com/?s=Batman&apikey=564727fa");
+        await http.get("https://rickandmortyapi.com/api/character");
     if (response.statusCode == 200) {
       final result = jsonDecode(response.body);
-      Iterable list = result["Search"];
-      return list.map((movie) => Movie.fromJson(movie)).toList();
+      Iterable list = result["results"];
+      return list.map((character) => Character.fromJson(character)).toList();
     } else {
       throw Exception("Falló la conexión");
     }
@@ -42,6 +42,6 @@ class _PaginaAPIState extends State<PaginaAPI> {
 
   @override
   Widget build(BuildContext context) {
-    return MoviesWidget(movies: _movies);
+    return charactersWidget(characters: _character);
   }
 }
