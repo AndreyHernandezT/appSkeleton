@@ -1,16 +1,19 @@
-# app_skeleton
+# App Skeleton
 
-A new Flutter project.
+Proyecto que se conecta con [Rick and Morty API](https://rickandmortyapi.com/), implementando el **_Patrón de Diseño Skeleton_** desarrollado en **Flutter**
 
-## Getting Started
+## Recomendaciones 📋
 
-This project is a starting point for a Flutter application.
+- En el archivo  ```pubspec.yaml```  incluir las dependencias:
 
-A few resources to get you started if this is your first Flutter project:
+```
+dependencies:
+  http: ^0.12.2
+  shimmer: ^2.0.0
+```
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Demostración 🎬
+Perdón por la baja calidad del gif.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![AppSkeleton 1](https://user-images.githubusercontent.com/60206886/136115195-2e949413-7476-48f8-ac02-9e02e4ae8e51.gif)
+
