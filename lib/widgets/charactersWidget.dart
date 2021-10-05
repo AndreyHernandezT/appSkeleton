@@ -22,7 +22,6 @@ class charactersWidget extends StatelessWidget {
         itemCount: characters.length,
         itemBuilder: (context, index) {
           final character = characters[index];
-
           return buildCharacters(character, context);
         },
       );
