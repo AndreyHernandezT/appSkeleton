@@ -25,6 +25,7 @@ class _PaginaAPIState extends State<PaginaAPI> {
     final characters = await allcharacters();
     setState(() {
       _character = characters;
+      loading = false;
     });
   }
 
@@ -35,7 +36,7 @@ class _PaginaAPIState extends State<PaginaAPI> {
     if (response.statusCode == 200) {
       final result = jsonDecode(response.body);
       Iterable list = result["results"];
-      loading = false;
+
       return list.map((character) => Character.fromJson(character)).toList();
     } else {
       throw Exception("Falló la conexión");

@@ -13,23 +13,10 @@ class charactersWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     if (loading) {
       return ListView.builder(
-        itemCount: 12,
-        itemBuilder: (context, index) {
-          return ListTile(
-            leading: SkeletonWidget.rectangular(width: 60, height: 70),
-            title: SkeletonWidget.text(width: 70, height: 16),
-            subtitle:
-                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              SizedBox(height: 3),
-              SkeletonWidget.text(width: 60, height: 8),
-              SizedBox(height: 3),
-              SkeletonWidget.text(width: 60, height: 8),
-              SizedBox(height: 3),
-              SkeletonWidget.text(width: 60, height: 8),
-            ]),
-          );
-        },
-      );
+          itemCount: 12,
+          itemBuilder: (context, index) {
+            return buildSkeleton();
+          });
     } else {
       return ListView.builder(
         itemCount: characters.length,
@@ -40,6 +27,21 @@ class charactersWidget extends StatelessWidget {
         },
       );
     }
+  }
+
+  Widget buildSkeleton() {
+    return ListTile(
+      leading: SkeletonWidget.rectangular(width: 60, height: 70),
+      title: SkeletonWidget.text(width: 70, height: 16),
+      subtitle: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        SizedBox(height: 3),
+        SkeletonWidget.text(width: 60, height: 8),
+        SizedBox(height: 3),
+        SkeletonWidget.text(width: 60, height: 8),
+        SizedBox(height: 3),
+        SkeletonWidget.text(width: 60, height: 8),
+      ]),
+    );
   }
 
   Widget buildCharacters(Character character, BuildContext context) {
@@ -63,7 +65,10 @@ class charactersWidget extends StatelessWidget {
           style: Theme.of(context).textTheme.headline4,
         )
       ]),
-      leading: Image.network(character.image),
+      leading: Image.network(
+        character.image,
+        height: 100,
+      ),
     );
   }
 }

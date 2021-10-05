@@ -16,7 +16,6 @@ class MyApp extends StatelessWidget {
       home: SplashScreen(),
       theme: ThemeData(
           primaryColor: Color(0XFF181A20),
-          accentColor: Color(0xFF105069),
           highlightColor: Color(0XFF8FFAFF),
           textTheme: TextTheme(
             headline1: TextStyle(

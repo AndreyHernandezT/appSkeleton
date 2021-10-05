@@ -80,7 +80,7 @@ class PaginaHome extends StatelessWidget {
                 ]),
             child: Center(
               child: Text(
-                'El patrón de diseño Skeleton aparece brevemente mientras se cargan los datos de la API',
+                'El patrón de diseño Skeleton aparece brevemente mientras se cargan los datos de la API. Para recargar y volver a visualizar el patrón Skeleton, alterna entre ventanas',
                 style: Theme.of(context).textTheme.headline2,
                 textAlign: TextAlign.center,
               ),
