@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:app_skeleton/models/characters.dart';
 import 'package:app_skeleton/widgets/charactersWidget.dart';
 import 'package:flutter/material.dart';
@@ -14,6 +13,7 @@ class PaginaAPI extends StatefulWidget {
 
 class _PaginaAPIState extends State<PaginaAPI> {
   List<Character> _character = [];
+  var loading = true;
 
   @override
   void initState() {
@@ -22,18 +22,20 @@ class _PaginaAPIState extends State<PaginaAPI> {
   }
 
   void _populateAllcharacters() async {
-    final characters = await _allcharacters();
+    final characters = await allcharacters();
     setState(() {
       _character = characters;
     });
   }
 
-  Future<List<Character>> _allcharacters() async {
+  Future<List<Character>> allcharacters() async {
     final response =
         await http.get("https://rickandmortyapi.com/api/character");
+
     if (response.statusCode == 200) {
       final result = jsonDecode(response.body);
       Iterable list = result["results"];
+      loading = false;
       return list.map((character) => Character.fromJson(character)).toList();
     } else {
       throw Exception("Falló la conexión");
@@ -42,6 +44,6 @@ class _PaginaAPIState extends State<PaginaAPI> {
 
   @override
   Widget build(BuildContext context) {
-    return charactersWidget(characters: _character);
+    return charactersWidget(characters: _character, loading: loading);
   }
 }

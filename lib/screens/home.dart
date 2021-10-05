@@ -80,7 +80,7 @@ class PaginaHome extends StatelessWidget {
                 ]),
             child: Center(
               child: Text(
-                'El patrón de diseño Skeleton está fijado en 5 segundos mientras se obtiene la respuesta de la API.',
+                'El patrón de diseño Skeleton aparece brevemente mientras se cargan los datos de la API',
                 style: Theme.of(context).textTheme.headline2,
                 textAlign: TextAlign.center,
               ),
